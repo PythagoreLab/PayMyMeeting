@@ -20,6 +20,14 @@ angular.module('payMyMeetingApp', [
         templateUrl: 'views/meeting.html',
         controller: 'MainCtrl'
       })
+      .when('/join', {
+        templateUrl: 'views/join.html',
+        controller: 'MainCtrl'
+      })
+      .when('/count', {
+        templateUrl: 'views/count.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
