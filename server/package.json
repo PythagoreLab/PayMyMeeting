@@ -1,0 +1,14 @@
+{
+  "name": "PayMyMeeting",
+  "version": "0.0.0",
+  "description": "A fun experiment with AngularJs, Node.js and MongoDB to estimate the cost of a meeting in real time",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Alles, Vincent Bostoen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
