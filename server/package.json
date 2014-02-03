@@ -9,6 +9,7 @@
   "author": "Jeremy Alles, Vincent Bostoen",
   "license": "MIT",
   "dependencies": {
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "open": "0.0.4"
   }
 }
