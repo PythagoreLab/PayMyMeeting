@@ -10,23 +10,23 @@ angular.module('payMyMeetingApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'homeController'
       })
       .when('/create', {
         templateUrl: 'views/create.html',
-        controller: 'MainCtrl'
+        controller: 'createMeetingController'
       })
       .when('/meeting', {
         templateUrl: 'views/meeting.html',
-        controller: 'MainCtrl'
+        controller: 'showMeetingController'
       })
       .when('/join', {
         templateUrl: 'views/join.html',
-        controller: 'MainCtrl'
+        controller: 'joinMeetingController'
       })
       .when('/count', {
         templateUrl: 'views/count.html',
-        controller: 'MainCtrl'
+        controller: 'countMeetingCostController'
       })
       .otherwise({
         redirectTo: '/'
