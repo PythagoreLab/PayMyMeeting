@@ -9,13 +9,13 @@
   <h3 class="text-muted">PayMyMeeting</h3>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="showMeetingController">
 	<div class="row">
 		<div class="col-md-8">
 			<img src="http://t2.gstatic.com/images?q=tbn:ANd9GcRzs6gz-iFTn_vnJxXbG07v9zrIJaHyUJeMRRQgvh5hrGkmWAzajxNdfjnXvA">
 		</div>
 		<div class="col-md-4">
-			<p>Attendees :</p>
+			<p>Attendees : {{attendees}}</p>
 			<ul class="list-group">
 				<li class="list-group-item">Bryan Jouber</li>
 				<li class="list-group-item">Bobby Lamiche</li>

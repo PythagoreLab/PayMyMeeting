@@ -9,10 +9,10 @@
   <h3 class="text-muted">PayMyMeeting</h3>
 </div>
 
-<div class="row">
+<div class="row" ng-controller="joinMeetingController">
    <p>Join a meeting</p>
-   <input type="text" ng-model="userName"  size="30" placeholder="Add your name here">
-   <input class="btn-primary" type="submit" value="join">
+   <input type="text" ng-model="joinMeetingRequest.name"  size="30" placeholder="Add your name here">
+   <input ng-click="joinMeeting(joinMeetingRequest)" class="btn-primary" type="submit" value="join">
 </div>
 
 <div class="footer">
