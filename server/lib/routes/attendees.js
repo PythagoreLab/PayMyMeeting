@@ -1,4 +1,5 @@
 var mongoDal = require("../mongo-dal");
+var socket = require("../socket");
 
 exports.addRoutes = function (app, config) {
     app.get('/api/attendees',
@@ -18,6 +19,10 @@ exports.addRoutes = function (app, config) {
     app.post('/api/attendees', function(req, res) {
         if (req.body && req.body.name && req.body.profileId && req.body.meetingId) {
             mongoDal.addAttendee(req.body.name, req.body.profileId, req.body.meetingId);
+
+            // send notification
+            socket.broadcastMessage("new attendee !!!");
+
             res.end('OK');
         }
         else{

@@ -1,4 +1,5 @@
 var mongoDal = require("../mongo-dal");
+var socket = require("../socket").api;
 
 var profiles = [
 	{
@@ -21,6 +22,9 @@ var profiles = [
 exports.addRoutes = function (app, config) {
     app.get('/api/profiles',
         function(req, res) {
+            // send notification
+            socket.broadcastMessage("new attendee !!!");
+
             res.json(profiles);
     });
 };
