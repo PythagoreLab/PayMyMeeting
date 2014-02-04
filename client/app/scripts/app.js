@@ -16,11 +16,11 @@ angular.module('payMyMeetingApp', [
         templateUrl: 'views/create.html',
         controller: 'createMeetingController'
       })
-      .when('/meeting', {
+      .when('/meeting/:meetingId', {
         templateUrl: 'views/meeting.html',
         controller: 'showMeetingController'
       })
-      .when('/join', {
+      .when('/join/:meetingId', {
         templateUrl: 'views/join.html',
         controller: 'joinMeetingController'
       })

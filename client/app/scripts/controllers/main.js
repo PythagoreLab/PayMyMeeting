@@ -19,8 +19,10 @@ angular.module('payMyMeetingApp')
 		});
 	}
 })
-.controller('showMeetingController', function ($scope, $http) {
-	$http.get('/api/attendees/52f0f5e3404452581ab77e05').
+.controller('showMeetingController', function ($scope, $http, $routeParams) {
+	$scope.meetingId = $routeParams.meetingId;
+
+	$http.get('/api/attendees/' + $scope.meetingId).
 	success(function (data, status, headers, config) {
 		$scope.attendees = data;
 	}).
@@ -40,8 +42,18 @@ angular.module('payMyMeetingApp')
 		console.log('socket connection closed');
 	};
 })
-.controller('joinMeetingController', function ($scope, $http) {
+.controller('joinMeetingController', function ($scope, $http, $routeParams) {
+	var meetingId = $routeParams.meetingId;
+
+	$http.get('/api/profiles/').
+	success(function (data, status, headers, config) {
+		$scope.profiles = data;
+	}).
+	error(function (data, status, headers, config) {
+	});
+
 	$scope.joinMeeting = function(joinMeetingRequest){
+		joinMeetingRequest.meetingId = meetingId;
 		$http.post('/api/attendees/', joinMeetingRequest).
 		success(function (data, status, headers, config) {
 		}).

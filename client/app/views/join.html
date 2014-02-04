@@ -12,6 +12,7 @@
 <div class="row" ng-controller="joinMeetingController">
    <p>Join a meeting</p>
    <input type="text" ng-model="joinMeetingRequest.name"  size="30" placeholder="Add your name here">
+   <p>{{profiles}}</p>
    <input ng-click="joinMeeting(joinMeetingRequest)" class="btn-primary" type="submit" value="join">
 </div>
 

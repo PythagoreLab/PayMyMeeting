@@ -14,7 +14,9 @@
 </div>
 
 <div class="row marketing"  ng-controller="homeController">
-  <p>{{meetings}}</p>
+  <li ng-repeat="meeting in meetings">
+    <a href="#/meeting/{{meeting.id}}">{{meeting.title}}</a>
+  </li>
   <p><a class="btn btn-lg btn-success" ng-href="#/create">Create a meeting</a></p>
 </div>
 
