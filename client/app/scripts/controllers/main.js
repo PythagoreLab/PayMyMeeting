@@ -19,7 +19,7 @@ angular.module('payMyMeetingApp')
 		});
 	};
 })
-.controller('showMeetingController', function ($scope, $http, $routeParams) {
+.controller('showMeetingController', function ($scope, $http, $routeParams, $log) {
 	$scope.meetingId = $routeParams.meetingId;
 
 	$http.get('/api/attendees/' + $scope.meetingId).
@@ -31,15 +31,15 @@ angular.module('payMyMeetingApp')
 	var sock = new SockJS('http://127.0.0.1:3000/notifications');
 
 	sock.onopen = function() {
-		console.log('socket connection open');
+		$log('socket connection open');
 	};
 
 	sock.onmessage = function(e) {
-		alert('socket message ' + e.data);
+		$log('socket message ' + e.data);
 	};
 
 	sock.onclose = function() {
-		console.log('socket connection closed');
+		$log('socket connection closed');
 	};
 })
 .controller('joinMeetingController', function ($scope, $http, $routeParams) {
@@ -61,6 +61,38 @@ angular.module('payMyMeetingApp')
 		});
 	};
 })
-.controller('countMeetingCostController', function ($scope) {
-	$scope.count = 100;
+.controller('countMeetingCostController', function ($scope, $q, $http, $routeParams, $interval) {
+	var meetingId = $routeParams.meetingId;
+	var totalCostPerSecond = 0;
+
+	var getCostFromProfileId = function(profiles, id) {
+		for (var i = 0; i < profiles.length; i ++){
+			if (profiles[i].id === id) {
+				return profiles[i].cost;
+			}
+		}
+		return 0;
+	};
+
+	$q
+	.all([ $http.get('/api/profiles'), $http.get('/api/attendees/' + meetingId) ] )
+    .then(function(values) {
+		var profiles = values[0].data;
+		var attendees = values[1].data;
+		for (var i = 0; i < attendees.length; i++){
+			totalCostPerSecond += getCostFromProfileId(profiles, attendees[i].profileId) / (8 * 60 * 60);
+		}
+    });
+
+	$scope.cost = 0;
+	var stop = $interval(function() {
+		$scope.cost += totalCostPerSecond;
+	}, 1000);
+
+	$scope.stopMeeting = function() {
+		if (angular.isDefined(stop)) {
+      		$interval.cancel(stop);
+  			stop = undefined;
+		}
+	};
 });

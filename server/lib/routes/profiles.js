@@ -3,17 +3,17 @@ var socket = require("../socket").api;
 
 var profiles = [
 	{
-		id: 0,
+		id: "0",
 		name: "developer",
 		cost: 450
 	},
 	{
-		id: 1,
+		id: "1",
 		name: "architect",
 		cost: 800
 	},
 	{
-		id: 2,
+		id: "2",
 		name: "scrum master",
 		cost: 600
 	}

@@ -24,7 +24,7 @@ angular.module('payMyMeetingApp', [
         templateUrl: 'views/join.html',
         controller: 'joinMeetingController'
       })
-      .when('/count', {
+      .when('/count/:meetingId', {
         templateUrl: 'views/count.html',
         controller: 'countMeetingCostController'
       })
