@@ -1,5 +1,5 @@
 var mongoDal = require("../mongo-dal");
-var socket = require("../socket");
+var socket = require("../socket").api;
 
 exports.addRoutes = function (app, config) {
     app.get('/api/attendees',
