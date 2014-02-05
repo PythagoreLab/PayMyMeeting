@@ -10,8 +10,11 @@ exports.addRoutes = function (app, config) {
 
     app.post('/api/meetings', function(req, res) {
         if (req.body && req.body.name) {
-            mongoDal.addMeeting(req.body.name);
-            res.end('OK');
+            mongoDal.addMeeting(req.body.name, function(meeting){
+                res.json({
+                    id: meeting._id, 
+                    title: meeting.title});
+            });
         }
         else{
             res.json({err: 'Invalid request'});

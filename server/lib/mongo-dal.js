@@ -16,11 +16,13 @@ module.exports = {
     },
 
     // add a new meeting
-    addMeeting: function(name) {
+    addMeeting: function(name, callback) {
         var mongoMeeting = new Meeting({title: name});
         mongoMeeting.save(function(err, element) {
             if (err)
                 console.log("Error while saving element " + JSON.stringify(element) + " : " + err);
+
+            callback(element);
         });
     },
 
@@ -65,4 +67,4 @@ module.exports = {
             callback(elements);
         });
     }
-}
+};

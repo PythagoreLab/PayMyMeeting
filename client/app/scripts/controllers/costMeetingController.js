@@ -22,7 +22,7 @@ angular.module('payMyMeetingApp')
 		for (var i = 0; i < attendees.length; i++){
 			totalCostPerSecond += getCostFromProfileId(profiles, attendees[i].profileId) / (8 * 60 * 60);
 		}
-    });
+	});
 
 	$scope.cost = 0;
 	var stop = $interval(function() {
@@ -31,8 +31,8 @@ angular.module('payMyMeetingApp')
 
 	$scope.stopMeeting = function() {
 		if (angular.isDefined(stop)) {
-      		$interval.cancel(stop);
-  			stop = undefined;
+			$interval.cancel(stop);
+			stop = undefined;
 		}
 	};
 });
