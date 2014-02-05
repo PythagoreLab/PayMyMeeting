@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -19,25 +19,38 @@
     <link rel="stylesheet" href="bower_components/odometer/themes/odometer-theme-default.css" />
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="payMyMeetingApp">
+</head>
+<body ng-app="payMyMeetingApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
+      <![endif]-->
+      <div class="container">
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a ng-href="#">Home</a></li>
+            <li><a ng-href="#/create">Create</a></li>
+            <li><a ng-href="#/meeting">Meeting</a></li>
+            <li><a ng-href="#/join">Join</a></li>
+            <li><a ng-href="#/count">Count</a></li>
+        </ul>
+        <h3 class="text-muted">PayMyMeeting</h3>
+    </div>
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
+    <div class="footer">
+      <p>POC</p>
+  </div>
+</div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+ga('create', 'UA-XXXXX-X');
+ga('send', 'pageview');
+</script>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -58,13 +71,13 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/homeController.js"></script>
-        <script src="scripts/controllers/createMeetingController.js"></script>
-        <script src="scripts/controllers/costMeetingController.js"></script>
-        <script src="scripts/controllers/joinMeetingController.js"></script>
-        <script src="scripts/controllers/showMeetingController.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/createMeetingController.js"></script>
+    <script src="scripts/controllers/costMeetingController.js"></script>
+    <script src="scripts/controllers/joinMeetingController.js"></script>
+    <script src="scripts/controllers/showMeetingController.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

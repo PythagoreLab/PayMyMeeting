@@ -1,14 +1,3 @@
-<div class="header">
-  <ul class="nav nav-pills pull-right">
-    <li class="active"><a ng-href="#">Home</a></li>
-    <li><a ng-href="#/create">Create</a></li>
-    <li><a ng-href="#/meeting">Meeting</a></li>
-    <li><a ng-href="#/join">Join</a></li>
-    <li><a ng-href="#/count">Count</a></li>
-  </ul>
-  <h3 class="text-muted">PayMyMeeting</h3>
-</div>
-
 <div class="row" ng-controller="joinMeetingController">
    <p>Join a meeting</p>
    <input type="text" ng-model="joinMeetingRequest.name"  size="30" placeholder="Add your name here">
@@ -18,8 +7,4 @@
       </input>
    </li>
    <input ng-click="joinMeeting(joinMeetingRequest)" class="btn-primary" type="submit" value="join">
-</div>
-
-<div class="footer">
-  <p>POC</p>
 </div>
