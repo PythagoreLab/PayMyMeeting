@@ -4,6 +4,7 @@ angular.module('payMyMeetingApp')
 .controller('costMeetingController', function ($scope, $q, $http, $routeParams, $interval) {
 	var meetingId = $routeParams.meetingId;
 	var totalCostPerSecond = 0;
+	var stop;
 
 	var getCostFromProfileId = function(profiles, id) {
 		for (var i = 0; i < profiles.length; i ++){
@@ -25,14 +26,35 @@ angular.module('payMyMeetingApp')
 	});
 
 	$scope.cost = 0;
-	var stop = $interval(function() {
-		$scope.cost += totalCostPerSecond;
-	}, 2000);
 
-	$scope.stopMeeting = function() {
+	var resumeMeeting = function() {
+		if (!angular.isDefined(stop)){
+			stop = $interval(function() {
+				$scope.cost += totalCostPerSecond;
+			}, 2000);
+			$scope.pauseText = 'Pause';
+		}
+	};
+	
+	var pauseMeeting = function(){
 		if (angular.isDefined(stop)) {
 			$interval.cancel(stop);
 			stop = undefined;
+			$scope.pauseText = 'Resume';
 		}
 	};
+
+	$scope.stopMeeting = function() {
+		pauseMeeting();
+	};
+
+	$scope.pauseMeeting = function() {
+		if (angular.isDefined(stop)){
+			pauseMeeting();
+		} else {
+			resumeMeeting();
+		}
+	};
+
+	resumeMeeting();
 });
