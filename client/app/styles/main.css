@@ -95,6 +95,14 @@ body {
 
 }
 
+.profile-container {
+  padding: 5px;
+}
+
+.profile-label {
+  padding: 5px;  
+}
+
 body {
   position:absolute;
   top:0; right:0;

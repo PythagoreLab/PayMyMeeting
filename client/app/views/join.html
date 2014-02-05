@@ -1,10 +1,12 @@
 <div class="row" ng-controller="joinMeetingController">
-   <p>Join a meeting</p>
-   <input type="text" ng-model="joinMeetingRequest.name"  size="30" placeholder="Add your name here">
-   <li class="list-group-item" ng-repeat="profile in profiles">
-      <input type="radio" ng-model="joinMeetingRequest.profileId" name="profile" value="{{profile.id}}">
-        {{profile.name}}
-      </input>
-   </li>
-   <input ng-click="joinMeeting(joinMeetingRequest)" class="btn-primary" type="submit" value="join">
+	<h1>Join a meeting</h1>
+	<input type="text" ng-model="joinMeetingRequest.name"  size="30" placeholder="Add your name here">
+	<div class="profile-container">
+		<span ng-repeat="profile in profiles" class="profile-label">
+			<input type="radio" ng-model="joinMeetingRequest.profileId" name="profile" value="{{profile.id}}">
+			{{profile.name}}
+		</input>
+	</span>
+</div>
+<input ng-click="joinMeeting(joinMeetingRequest)" class="btn btn-lg btn-default" type="submit" value="join">
 </div>
