@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('payMyMeetingApp')
-.controller('costMeetingController', function ($scope, $q, $http, $routeParams, $interval) {
+.controller('costMeetingController', function ($scope, $q, $http, $routeParams, $interval, $location, $modal) {
 	var meetingId = $routeParams.meetingId;
 	var totalCostPerSecond = 0;
 	var stop;
@@ -45,9 +45,19 @@ angular.module('payMyMeetingApp')
 	};
 
 	$scope.stopMeeting = function() {
-		pauseMeeting();
-	};
+		var modalInstance = $modal.open({
+			templateUrl: 'views/confirmation.html',
+			controller: 'confirmationController'
+		});
 
+		modalInstance.result.then(function (value) {
+			if (value) {
+				$location.path('#');
+			}
+		}, function () {
+		});
+	};
+	
 	$scope.pauseMeeting = function() {
 		if (angular.isDefined(stop)){
 			pauseMeeting();
