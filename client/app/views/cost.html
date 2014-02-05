@@ -11,8 +11,9 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<p>{{cost}}</p>
-    <p>{{attendees}}</p>
+    <div class="counter">
+      <span class="odometer-content">$<odometer value="cost"></odometer></span>
+    </div>
 		<p><a class="btn btn-lg btn-success" ng-click="stopMeeting()">Stop this meeting</a></p>
 	</div>
 </div>

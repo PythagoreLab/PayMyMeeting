@@ -27,7 +27,7 @@ angular.module('payMyMeetingApp')
 	$scope.cost = 0;
 	var stop = $interval(function() {
 		$scope.cost += totalCostPerSecond;
-	}, 1000);
+	}, 2000);
 
 	$scope.stopMeeting = function() {
 		if (angular.isDefined(stop)) {

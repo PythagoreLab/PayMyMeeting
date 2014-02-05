@@ -77,3 +77,20 @@ body {
     border-bottom: 0;
   }
 }
+
+.odometer-content {
+  font-size: 180px;
+}
+.odometer {
+  font-size: 200px;
+}
+
+.counter {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 500px;
+  display: block;
+
+}
