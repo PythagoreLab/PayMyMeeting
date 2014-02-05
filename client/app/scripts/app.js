@@ -24,9 +24,9 @@ angular.module('payMyMeetingApp', [
         templateUrl: 'views/join.html',
         controller: 'joinMeetingController'
       })
-      .when('/count/:meetingId', {
-        templateUrl: 'views/count.html',
-        controller: 'countMeetingCostController'
+      .when('/cost/:meetingId', {
+        templateUrl: 'views/cost.html',
+        controller: 'costMeetingController'
       })
       .otherwise({
         redirectTo: '/'
