@@ -7,6 +7,11 @@ var clients = [];
 endpoint.on('connection', function(conn) {
 	console.log('SOCKET new socket connection received !');
 	clients.push(conn);
+
+	conn.on('close', function() {
+		clients.remove(conn);
+		console.log('SOCKET connection closed')
+	});
 });
 
 exports.api = {

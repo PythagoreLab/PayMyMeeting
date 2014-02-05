@@ -1,6 +1,8 @@
 var express = require('express');
 var http = require('http');
 
+require('./lib/tools.js');
+
 var config = require('./config.js');
 var socket = require('./lib/socket.js').api;
 
