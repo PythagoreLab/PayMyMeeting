@@ -28,6 +28,10 @@ angular.module('payMyMeetingApp', [
         templateUrl: 'views/cost.html',
         controller: 'costMeetingController'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'homeController'
+      })
       .otherwise({
         redirectTo: '/'
       });
