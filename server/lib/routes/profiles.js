@@ -16,6 +16,21 @@ var profiles = [
 		id: "2",
 		name: "scrum master",
 		cost: 600
+	},
+	{
+		id: "3",
+		name: "test manager",
+		cost: 200
+	},
+	{
+		id: "4",
+		name: "salesman",
+		cost: 800
+	},
+	{
+		id: "4",
+		name: "product owner",
+		cost: 800
 	}
 ]
 
