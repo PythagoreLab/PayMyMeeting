@@ -296,3 +296,21 @@ body {
     width: 700px;
   }
 }
+
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition: opacity 0.5s linear; /* Chrome */
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+ 
+.slide.ng-enter {
+}
+.slide.ng-enter-active {
+  opacity: 1;
+}
+
+.slide.ng-leave { 
+  height: 0px;
+}
+.slide.ng-leave-active {
+ }
