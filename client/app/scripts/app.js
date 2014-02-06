@@ -43,24 +43,6 @@ angular.module('payMyMeetingApp', [
         redirectTo: '/'
       });
   })
-.animation('.reveal-animation', function() {
-	console.log('te');
-  return {
-    enter: function(element, done) {
-      element.css('display', 'none');
-      element.fadeIn(5000, done);
-      return function() {
-        element.stop();
-      };
-    },
-    leave: function(element, done) {
-      element.fadeOut(5000, done);
-      return function() {
-        element.stop();
-      };
-    }
-  };
-})
 .factory('$modalDialog', ['$modal', function($modal){
 	var showCustomDialog = function(title, content, buttons){
 		var modalInstance = $modal.open({
