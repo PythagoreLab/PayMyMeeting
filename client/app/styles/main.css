@@ -257,6 +257,11 @@ body {
   }
 }
 
+@media (max-height: 550px) {
+  .mastfoot {
+    display: none;
+  }
+}
 
 /*
  * Cover
