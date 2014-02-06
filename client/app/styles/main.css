@@ -129,6 +129,10 @@ body {
   padding-top: 3px;
 }
 
+.framework-list h3 {
+  text-decoration: underline;
+}
+
 body {
   position:absolute;
   top:0; right:0;
@@ -205,6 +209,14 @@ body {
 /* Padding for spacing */
 .inner {
   padding: 30px;
+}
+
+.about-content {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.about-content li{
+  color: white;
 }
 
 /*
