@@ -101,6 +101,17 @@ body {
   padding: 5px;  
 }
 
+.framework-list {
+  padding-top: 20px;
+  list-style-type: none;
+  text-align: left;
+  font-size: 20px;
+}
+
+.framework-list li {
+  padding-top: 3px;
+}
+
 body {
   position:absolute;
   top:0; right:0;
