@@ -63,6 +63,19 @@ body {
   border: 5px solid white;
 }
 
+.modal-content {
+  color: white;
+  background-color: #666666;
+}
+
+.modal-content .modal-header {
+  border: none;
+}
+
+.modal-content .modal-footer{
+  border: none;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
