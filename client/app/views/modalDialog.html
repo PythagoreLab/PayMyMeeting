@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3>{{title}}</h3>
+</div>
+<div class="modal-body">
+	<p>{{content}}</p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">{{buttons[0]}}</button>
+
+    <button class="btn btn-warning" ng-show="buttons[1] !== undefined" ng-click="cancel()">{{buttons[1]}}</button>
+</div>

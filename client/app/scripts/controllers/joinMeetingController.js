@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('payMyMeetingApp')
-.controller('joinMeetingController', function ($scope, $http, $routeParams) {
+.controller('joinMeetingController', function ($scope, $http, $routeParams, $location, $modalDialog) {
 	var meetingId = $routeParams.meetingId;
 
 	$http.get('/api/profiles/').
@@ -12,11 +12,16 @@ angular.module('payMyMeetingApp')
 	});
 
 	$scope.joinMeeting = function(joinMeetingRequest){
-		joinMeetingRequest.meetingId = meetingId;
-		$http.post('/api/attendees/', joinMeetingRequest).
-		success(function () {
-		}).
-		error(function () {
-		});
+		if (joinMeetingRequest) {
+			joinMeetingRequest.meetingId = meetingId;
+			$http.post('/api/attendees/', joinMeetingRequest).
+			success(function () {
+				$modalDialog.showDialog('Success', 'You have joined the meeting !').then(function() {
+					$location.path('/#');
+				});
+			}).
+			error(function () {
+			});
+		}
 	};
 });
