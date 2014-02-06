@@ -4,7 +4,8 @@
   "description": "A fun experiment with AngularJs, Node.js and MongoDB to estimate the cost of a meeting in real time",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "echo \"postinstall time\"; ../client/node_modules/grunt/bin/grunt build"
   },
   "author": "Jeremy Alles, Vincent Bostoen",
   "license": "MIT",
