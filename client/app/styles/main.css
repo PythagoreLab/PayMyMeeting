@@ -133,6 +133,19 @@ body {
   text-decoration: underline;
 }
 
+input[type=text] {
+  border: 2px solid #dadada;
+  border-radius: 7px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+input[type=text]:focus {
+  outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
 body {
   position:absolute;
   top:0; right:0;
