@@ -29,6 +29,10 @@ angular.module('payMyMeetingApp', [
         templateUrl: 'views/cost.html',
         controller: 'costMeetingController'
       })
+      .when('/list', {
+        templateUrl: 'views/meetings.html',
+        controller: 'listMeetingsController'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'homeController'
