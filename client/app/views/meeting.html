@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<qr text="'{{joinURL}}'" type-number="8" correction-level="'M'" size="200" input-mode="ALPHA_NUM"></qr>
+			<a href="{{joinURL}}"><qrcode class="qrcode" version="5" error-correction-level="M" size="200" data="{{joinURL}}"></qrcode></a>
 		</div>
 		<div class="col-md-6">
 			<h2>Attendees :</h2>

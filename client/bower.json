@@ -15,7 +15,7 @@
     "sockjs": "0.3.4",
     "odometer": "0.4.6",
     "angular-bootstrap": "~0.10.0",
-    "angular-qr": "0.1.4",
+    "angular-qrcode": "3.1.0",
     "toastr": "~2.0.1"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ angular.module('payMyMeetingApp', [
   'ngRoute',
   'ngAnimate',
   'ui.bootstrap',
-  'ja.qr'
+  'monospaced.qrcode'
 ])
 .config(function ($routeProvider) {
     $routeProvider

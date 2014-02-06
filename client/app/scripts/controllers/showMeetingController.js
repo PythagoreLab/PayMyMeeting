@@ -4,7 +4,7 @@ angular.module('payMyMeetingApp')
 .controller('showMeetingController', function ($scope, $http, $routeParams, $log, $window) {
 
 	$scope.meetingId = $routeParams.meetingId;
-	$scope.joinURL = $window.location.hostname + "/#/meeting/" + $scope.meetingId;
+	$scope.joinURL = $window.location.protocol + "//" + $window.location.hostname + ":" + $window.location.port + "/#/join/" + $scope.meetingId;
 
 	var loadAttendees = function(showToast){
 		$http.get('/api/attendees/' + $scope.meetingId).
@@ -23,7 +23,7 @@ angular.module('payMyMeetingApp')
 
 	loadAttendees(false);
 
-	var sock = new SockJS('http://127.0.0.1:3000/notifications');
+	var sock = new SockJS('/notifications');
 
 	sock.onopen = function() {
 		$log.log('socket connection open');
