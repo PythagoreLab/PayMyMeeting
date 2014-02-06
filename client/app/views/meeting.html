@@ -1,11 +1,9 @@
 <div class="container-fluid" ng-controller="showMeetingController">
 	<div class="row">
-		<div class="col-md-8">
-			<a href="#/join/{{meetingId}}">
-				<img src="http://t2.gstatic.com/images?q=tbn:ANd9GcRzs6gz-iFTn_vnJxXbG07v9zrIJaHyUJeMRRQgvh5hrGkmWAzajxNdfjnXvA">
-			</a>
+		<div class="col-md-6">
+			<qr text="'{{joinURL}}'" type-number="8" correction-level="'M'" size="200" input-mode="ALPHA_NUM"></qr>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<h2>Attendees :</h2>
 			<ul class="list-group">
 				<li ng-repeat="attendee in attendees">{{attendee.name}}</li>

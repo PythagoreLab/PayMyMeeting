@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('payMyMeetingApp')
-.controller('showMeetingController', function ($scope, $http, $routeParams, $log) {
+.controller('showMeetingController', function ($scope, $http, $routeParams, $log, $window) {
+
 	$scope.meetingId = $routeParams.meetingId;
+	$scope.joinURL = $window.location.hostname + "/#/meeting/" + $scope.meetingId;
 
 	var loadAttendees = function(){
 		$http.get('/api/attendees/' + $scope.meetingId).

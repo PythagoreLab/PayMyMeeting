@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('payMyMeetingApp', [
-	'ngCookies',
-	'ngResource',
-	'ngSanitize',
-	'ngRoute',
-	'ngAnimate',
-	'ui.bootstrap'
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute',
+  'ngAnimate',
+  'ui.bootstrap',
+  'ja.qr'
 ])
 .config(function ($routeProvider) {
     $routeProvider
