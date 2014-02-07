@@ -29,7 +29,7 @@ var server = http.createServer(app);
 
 socket.registerServer(server, '/notifications');
 
-server.listen(config.server.listenPort, '0.0.0.0', 511, function() {
+server.listen(process.env.PORT || 5000, '0.0.0.0', 511, function() {
   /*var open = require('open');
   open('http://localhost:' + config.server.listenPort + '/');*/
 });
