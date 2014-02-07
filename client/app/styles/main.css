@@ -125,6 +125,10 @@ body {
   font-size: 20px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .framework-list li {
   padding-top: 3px;
 }

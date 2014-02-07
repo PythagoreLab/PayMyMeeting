@@ -8,7 +8,7 @@ module.exports = {
    /* dbPath: 'mongodb://localhost:27017'*/
   },
   server: {
-    listenPort: 5000,
+    listenPort: process.env.PORT || 5000,
     distFolder: path.resolve(__dirname, '../client/dist'),
     staticUrl: ''
   }
